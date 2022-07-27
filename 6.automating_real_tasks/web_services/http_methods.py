@@ -11,5 +11,5 @@ data = {"description": "white kitten",
         "name": "Snowball",
         "age_months": 6}
 response = requests.post(URL, data=data)
-body = response.request.body 
+body = response.request.body
 #Output: 'description=white+kitten&name=Snowball&age_months=6'
