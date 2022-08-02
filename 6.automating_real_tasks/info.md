@@ -37,3 +37,7 @@ Web frameworks are commonly split into three basic components: (1) the applicati
 
 Multipurpose Internet Mail Extensions (MIME) standard is used to encode all sorts of files as text strings that ca be sent via email. In order for the recipient of your message to understand what to do with an attachment, you need to label the attachment with MIME type and subtype to tell them what sort of file you're using.
 Find more info at [MIME Types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+
+## SMTP 
+
+The Simple Mail Transfer Protocol specifies how computers can deliver email to each other.
