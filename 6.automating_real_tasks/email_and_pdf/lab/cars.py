@@ -81,8 +81,7 @@ def main(argv):
     table = cars_dict_to_table(data)
 
     # TODO: turn this into a PDF report
-    reports.generate('cars.pdf',"Sales summary for last month", info, table)
-
+    reports.generate('/tmp/cars.pdf',"Sales summary for last month", info, table)
 
     # TODO: send the PDF report as an email attachment
     sender = "automation@example.com"
