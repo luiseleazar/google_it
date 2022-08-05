@@ -26,3 +26,11 @@ A full path to the resource in the file system.
 ## Relative path
 
 Show where the resource path is located in relation to the current working directory.
+
+## Parsing
+
+Analyzing a file's content to correctly structure the data.
+
+## Regular Expression
+
+It's a search query for text that's expressed by string pattern. When run a search against a particular piece of text, anything that matches a specified regular expression pattern, is returned as a result.

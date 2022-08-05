@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Check health of computer"""
 import shutil
 import psutil
 import socket
