@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import shutil
 import os
+import socket
 import emails
 import psutil
 
@@ -16,6 +17,11 @@ def get_cpu_usage():
     return usage
 
 #TODO:Implemet get_free_memory()
+
+def check_localhost():
+    """Checks if localhost is resolved as 127.0.0.1"""
+    localhost = socket.gethostbyname('localhost')
+    return localhost == '127.0.0.1'
 
 cpu_usage = get_cpu_usage()
 disk_free = get_disk_usage()
@@ -41,4 +47,7 @@ if (memory / 8) < 524288000:
     message = emails.generate_error_report(sender, receiver, subject, body)
     emails.send_email(message)
 
-#TODO: Add the localhost - 127.0.0.1 resolve
+if not check_localhost():
+    subject = "Error - " #TODO:Add msg
+    message = emails.generate_error_report(sender, receiver, subject, body)
+    emails.send_email(message)

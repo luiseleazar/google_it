@@ -15,3 +15,14 @@ Everything outside of the kernel, like system program and user interface.
 ## Scalability
 
 When more work is added to a system, system can do whatever it needs to complete the work.
+
+## Absolute path
+
+A full path to the resource in the file system.
+
+    Windows: C:\Users\<user>
+    Linux: /home/<user>
+
+## Relative path
+
+Show where the resource path is located in relation to the current working directory.
