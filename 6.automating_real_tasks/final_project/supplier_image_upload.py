@@ -1,5 +1,6 @@
-import requests
+#!/usr/bin/env python3
 import os
+import requests
 
 path = '~/supplier-data/images/'
 image_list = os.listdir(path)

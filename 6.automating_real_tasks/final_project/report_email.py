@@ -1,9 +1,10 @@
-import os
+#!/usr/bin/env python3
 import datetime
-import reports
 import emails
+import os
+import reports
 
-path = '/mnt/c/Users/luise/Documents/dev/dev_wsl/google_it/6.automating_real_tasks/final_project/assets/'
+path = "~/supplier-data/descriptions/"
 file_list = os.listdir(path)
 info_list = []
 

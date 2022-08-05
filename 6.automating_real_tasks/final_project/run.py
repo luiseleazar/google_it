@@ -1,10 +1,12 @@
-import requests
+#!/usr/bin/env python3
 import os
+import requests
 
 ip = ''
 url = 'http://' + ip + '/fruits'
 
 def public_fruits(f):
+    """Public fruits on web page"""
     with open(f, 'r', encoding='utf-8') as txt:
         name = txt.readline()
         weight = txt.readline()
@@ -16,6 +18,7 @@ def public_fruits(f):
         "weight": weight,
         "description": description,
         "image_name": image}
+    #TODO:Maybe request body should be dumped
     print(request_body)
     response = requests.post(url, data = request_body)
     if response.status_code != 200:
