@@ -4,7 +4,7 @@ import emails
 import os
 import reports
 
-path = "~/supplier-data/descriptions/"
+path = "supplier-data/descriptions/"
 file_list = os.listdir(path)
 info_list = []
 
@@ -17,10 +17,10 @@ for file in file_list:
 
 info = ""
 for line in info_list:
-    info += '<br/>' + 'name: ' + line[0] + "<br/>" + 'weight: ' + line[1] + '<br/>'
+    info += 'name: ' + line[0] + "<br/>" + 'weight: ' + line[1] + '<br/>'
 filename = 'processed.pdf'
 today = datetime.datetime.today()
-title = f'Processed Update on {today}'
+title = f'Processed Update on {today.month} {today.day}, {today.year}'
 body = info
 
 if __name__ == "__main__":

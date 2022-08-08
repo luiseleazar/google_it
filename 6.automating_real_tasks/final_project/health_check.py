@@ -16,7 +16,9 @@ def get_cpu_usage():
     usage = psutil.cpu_percent(1)
     return usage
 
-#TODO:Implemet get_free_memory()
+def available_memory():
+    mem = psutil.virtual_memory()
+    return mem[1] / 8
 
 def check_localhost():
     """Checks if localhost is resolved as 127.0.0.1"""
@@ -24,8 +26,8 @@ def check_localhost():
     return localhost == '127.0.0.1'
 
 cpu_usage = get_cpu_usage()
-disk_free = get_disk_usage()
-memory = "" #TODO: Give a real value
+disk_free = get_disk_usage('/')
+memory = available_memory()
 
 sender = "automation@example.com"
 receiver = "{}@example.com".format(os.environ.get('USER'))
@@ -42,12 +44,12 @@ if disk_free < 20.0:
     message = emails.generate_error_report(sender, receiver, subject, body)
     emails.send_email(message)
 
-if (memory / 8) < 524288000:
+if memory < 524288000:
     subject = "Error - Available memory is less than 500MB"
     message = emails.generate_error_report(sender, receiver, subject, body)
     emails.send_email(message)
 
 if not check_localhost():
-    subject = "Error - " #TODO:Add msg
+    subject = "Error - localhost cannot be resolved to 127.0.0.1"
     message = emails.generate_error_report(sender, receiver, subject, body)
     emails.send_email(message)

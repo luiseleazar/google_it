@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import requests
+import json
 
 ip = ''
 url = 'http://' + ip + '/fruits'
@@ -16,16 +17,18 @@ def public_fruits(f):
     weight = int(weight.replace("lbs", ""))
     request_body = {"name": name[:-1],
         "weight": weight,
-        "description": description,
+        "description": description.strip(),
         "image_name": image}
-    #TODO:Maybe request body should be dumped
+    #TODO: Check why dictionary gets ' and not "", that the reason of getting failed requests
     print(request_body)
-    response = requests.post(url, data = request_body)
+    headers = {"Content-Type": "application/json"}
+    response = requests.post(url, headers=headers, data = json.dumps(request_body))
     if response.status_code != 200:
         print('Request failed')
+        print(f"Status code: {response.status_code}")
 
 #Path of txt files
-path = '~/supplier-data/descriptions/'
+path = 'supplier-data/descriptions/'
 file_list = os.listdir(path)
 
 for file in file_list:

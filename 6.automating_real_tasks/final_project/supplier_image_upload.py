@@ -2,7 +2,7 @@
 import os
 import requests
 
-path = '~/supplier-data/images/'
+path = 'supplier-data/images/'
 image_list = os.listdir(path)
 ip = ''
 url = 'http://' + ip + '/upload/'

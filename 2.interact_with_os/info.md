@@ -34,3 +34,12 @@ Analyzing a file's content to correctly structure the data.
 ## Regular Expression
 
 It's a search query for text that's expressed by string pattern. When run a search against a particular piece of text, anything that matches a specified regular expression pattern, is returned as a result.
+
+    -i flag: to remove case sensitive (re.IGNORECASE in Python)
+    . character: matches any character
+    ^ character: indicates the beginning
+    $ character: indicates the end of the line
+    \ character: scape character
+
+*Note: Always use raw string for regular expressions in Python, in order to tell the interpreter to not try to interpret any special character, instead, to just pass the string to the function as is.*
+

@@ -10,8 +10,9 @@ def img_changer(img_file):
     img = img.convert('RGB').resize((600, 400))
     img.save(img_file.replace("tiff", "jpeg"), quality = 95)
 
-path = '~/supplier-data/images/'
+path = 'supplier-data/images/'
 images_list = os.listdir(path)
 
 for image in images_list:
-    img_changer(path + image)
+    if 'tiff' in image:
+        img_changer(path + image)
