@@ -42,4 +42,3 @@ It's a search query for text that's expressed by string pattern. When run a sear
     \ character: scape character
 
 *Note: Always use raw string for regular expressions in Python, in order to tell the interpreter to not try to interpret any special character, instead, to just pass the string to the function as is.*
-
